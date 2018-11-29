@@ -24,7 +24,6 @@ class AddBook extends Component {
     }).then((response) => {
       return response.json()
     }).then((json) => {
-      console.log(json.message)
       this.props.history.push('/')
     })
   }
@@ -33,7 +32,7 @@ class AddBook extends Component {
 
     this.setState({
       book : {
-        ...this.setState,
+        ...this.state.book,
         [e.target.name] : e.target.value
       }
     })
@@ -44,6 +43,10 @@ class AddBook extends Component {
       <div className="AddBook">
         <h1>Add a book</h1>
         <input type="text" name="title" placeholder="Enter book title" onChange={this.textboxOnChange}/>
+        <input type="text" name="author" placeholder="Enter book author" onChange={this.textboxOnChange}/>
+        <input type="text" name="year" placeholder="Enter book year" onChange={this.textboxOnChange}/>
+        <input type="text" name="genre" placeholder="Enter book genre" onChange={this.textboxOnChange}/>
+        <input type="text" name="imageUrl" placeholder="Enter image URL" onChange={this.textboxOnChange}/>
           <button onClick={this.submitBookClick}>Add Book</button>
       </div>
     );
@@ -51,23 +54,3 @@ class AddBook extends Component {
 }
 
 export default AddBook;
-
-
-// handleAddMovieButtonClick() {
-//
-//   let movie = this.state.movie
-//
-//   fetch(ADD_MOVIE_URL,{
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(movie)
-//   }).then((response) => {
-//     return response.json()
-//   }).then((json) => {
-//     console.log(json)
-//     this.props.history.push('/all-movies')
-//   })
-//
-// }
