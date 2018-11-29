@@ -12,7 +12,6 @@ class AddBook extends Component {
   }
 
   submitBookClick = () => {
-
     let book = this.state.book
 
     fetch(ADD_BOOK_URL,{
@@ -46,7 +45,7 @@ class AddBook extends Component {
         <input type="text" name="author" placeholder="Enter book author" onChange={this.textboxOnChange}/>
         <input type="text" name="year" placeholder="Enter book year" onChange={this.textboxOnChange}/>
         <input type="text" name="genre" placeholder="Enter book genre" onChange={this.textboxOnChange}/>
-        <input type="text" name="imageUrl" placeholder="Enter image URL" onChange={this.textboxOnChange}/>
+        <input type="text" name="imageURL" placeholder="Enter image URL" onChange={this.textboxOnChange}/>
           <button onClick={this.submitBookClick}>Add Book</button>
       </div>
     );

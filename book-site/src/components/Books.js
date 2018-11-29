@@ -20,11 +20,15 @@ class Books extends Component {
     })
   }
 
+  buttonRemoveBook = (e) => {
+    console.log(e)
+  }
+
   render() {
 
     let bookItem = this.state.books.map(function(book,index){
       return <li key={index}>
-        <img className="bookImg" src={book.imgUrl}/>
+        <img className="bookImg" src={book.imgURL}/>
         <h4>{book.title}</h4>
         <label>{book.author}</label>
         <p>{book.year}</p>

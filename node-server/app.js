@@ -34,9 +34,9 @@ app.post('/api/add-book',(req,res) => {
   let bookAuthor = req.body.author
   let bookYear = req.body.year
   let bookGenre = req.body.genre
-  let bookImgUrl = req.body.imageUrl
+  let bookImgUrl = req.body.imageURL
 
-  let bookObject = { title: bookTitle, author: bookAuthor, year: bookYear, genre: bookGenre, imgUrl: bookImgUrl}
+  let bookObject = { title: bookTitle, author: bookAuthor, year: bookYear, genre: bookGenre, imgURL: bookImgUrl}
 
   addNewBook(bookObject)
 
