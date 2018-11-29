@@ -3,9 +3,6 @@ const bodyParser = require('body-parser')
 const app = express()
 const models = require('./models')
 
-let books = []
-
-
 addNewBook = (bookObject) => {
   let bookAddition = models.Book.build(
     bookObject
@@ -40,7 +37,6 @@ app.post('/api/add-book',(req,res) => {
   let bookImgUrl = req.body.imageUrl
 
   let bookObject = { title: bookTitle, author: bookAuthor, year: bookYear, genre: bookGenre, imgUrl: bookImgUrl}
-  books.push(bookObject)
 
   addNewBook(bookObject)
 
