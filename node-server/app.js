@@ -5,8 +5,8 @@ const models = require('./models')
 
 let books = []
 
+
 addNewBook = (bookObject) => {
-  console.log(bookObject)
   let bookAddition = models.Book.build(
     bookObject
   )
@@ -22,7 +22,13 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json())
 
 app.get('/api/books', (req,res) => {
-  res.send(JSON.stringify(books))
+
+  models.Book.findAll()
+  .then(function(results){
+    return JSON.stringify(results)
+  }).then(function(json){
+    res.send(json)
+  })
 })
 
 app.post('/api/add-book',(req,res) => {
